@@ -1,5 +1,5 @@
 
-![Banner NLW#6](./assets/poster.png)
+![Banner NLW#6](./src/assets/poster.png)
 ## NLW#6 - Trilha ReactJs - LetMeAsk
 
 Projeto criado com a intenção de conhecer os serviços da Firebase e integra-los com uma aplicação em React
@@ -14,7 +14,6 @@ Projeto criado com a intenção de conhecer os serviços da Firebase e integra-l
 
 ## Conceitos aprendidos
 
-### Teoria:
 - Fluxo de uma API
 - Conceitos de React
   - Componente
@@ -26,9 +25,9 @@ Projeto criado com a intenção de conhecer os serviços da Firebase e integra-l
 - Firebase - Serviços utilizados
   - Autenticação
   - Base de dados
-
-### Prática: 
-- Criação do Projeto e primeiras configurações
+- Rotas e navegação com react-router-dom
+- Context API
+- Hooks personalizados
 
 
 
