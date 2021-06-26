@@ -49,7 +49,7 @@ const NewRoom = () => {
           </form>
           <p>
             Quer entrar em uma sala existente? <Link to="/">clique aqui</Link>
-          </p>{user?.name}{user?.id}
+          </p>
         </div>
       </main>
     </div>
