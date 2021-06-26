@@ -1,23 +1,28 @@
+import copyImg from "../assets/images/copy.svg";
 
-import copyImg from '../assets/images/copy.svg';
-
-import '../styles/room-code.scss';
+import "../styles/room-code.scss";
 
 type RoomCodeProps = {
   code: string;
-} 
+  dark: boolean;
+};
 
-const RoomCode = (props: RoomCodeProps) => {
+const RoomCode = ({ code, dark = false }: RoomCodeProps) => {
   function copyRoomCodeToClipboard() {
-    navigator.clipboard.writeText(props.code)
+    navigator.clipboard.writeText(code);
   }
+  const className = !dark ? "room-code" : "room-code dark";
 
   return (
-    <button className="room-code" onClick={copyRoomCodeToClipboard}>
-    <div><img src={copyImg} alt="Copy room code" /></div>
-      <span>Sala #{props.code}</span>
-    </button>
-  )
-}
+    <div>
+      <button className={className} onClick={copyRoomCodeToClipboard}>
+        <div>
+          <img src={copyImg} alt="Copy room code" />
+        </div>
+        <span>Sala #{code}</span>
+      </button>
+    </div>
+  );
+};
 
 export default RoomCode;

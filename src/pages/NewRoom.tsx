@@ -7,22 +7,22 @@ import { database } from "../services/firebase";
 
 import illustationImg from "../assets/images/illustration.svg";
 import logoImg from "../assets/images/logo.svg";
+import logoDarkImg from "../assets/images/logo-dark.svg";
 import "../styles/auth.scss";
+import useTheme from "../hooks/useTheme";
 
 const NewRoom = () => {
   const { user } = useAuth();
   const history = useHistory();
   const [newRoom, setNewRoom] = useState("");
+  const { theme } = useTheme();
 
   const handleCreateRoom = async (event: FormEvent) => {
-    console.log(event)
     event.preventDefault();
     if (newRoom.trim() === "") {
       return;
     }
-    console.log(newRoom)
     const roomRef = database.ref("rooms");
-    console.log(newRoom)
     const firebaseRoom = await roomRef.push({
       title: newRoom,
       authorId: user?.id,
@@ -31,7 +31,7 @@ const NewRoom = () => {
   }
 
   return (
-    <div id="page-auth">
+    <div id="page-auth" className={theme}>
       <aside>
         <img src={illustationImg} alt="Ilustração simbolizando perguntas e respostas" />
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
@@ -39,7 +39,7 @@ const NewRoom = () => {
       </aside>
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="LetMeAsk" />
+          <img src={theme === 'light' ? logoImg : logoDarkImg} alt="LetMeAsk" />
           <h2>Criar uma nova sala</h2>
           <form onSubmit={handleCreateRoom}>
             <input type="text" placeholder="Nome da sala" onChange={(event) => setNewRoom(event.target.value)} value={newRoom} />

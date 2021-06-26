@@ -106,8 +106,66 @@
       }
     }
 
-    .question-list {
-      margin-top: 32px;
+    .question-list {       
+      display: flex;
+      flex-direction: column;
+      padding: 32px 0px;
+      height: 100vh;
+    }
+    .empty-list {      
+      display: flex;
+      height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 100px;
+      img {
+        width: 150px;
+        margin-bottom: 10px;
+      }
+      p {
+        color: #737380, 100%;
+      }
+    }
+  }
+
+  &.dark {
+    background: #41414d;
+    color: #e1e1e6;
+    main {
+      h1 {
+        color: #fff;
+      }
+      span {
+        color: #fff;
+      }
+      form {        
+        .form-footer {
+            .user-info {
+              span {
+              color: #7d7d85;
+            }
+            > span {
+              color: #e1e1e6;          
+            }
+          }
+        }
+      }
+    }
+    form {
+      input,textarea {
+        display: block;
+        box-sizing: border-box;
+        background: #33333b;
+        color: #e1e1e6;
+        border: 1px solid #565658;
+      }
+      input::placeholder {
+        color: #7d7d85;
+      }
+      input:focus {
+        outline: none;
+      }
     }
   }
 }

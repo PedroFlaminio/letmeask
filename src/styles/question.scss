@@ -19,6 +19,9 @@
   
   &.answered {
     background: #DBDCDD;
+    &.dark {
+      background: #222229;
+    }  
   }
 
   p {
@@ -79,4 +82,26 @@
       }
     }
   }
+
+  
+  &.dark {
+    background: #41414d;
+    box-shadow: 0 2px 12px #17102c;
+    color: #e1e1e6;
+    
+  &.highlighted {
+    background: #4a3e5a;
+  }
+    p{
+      color: #e1e1e6;
+
+    }
+    footer {
+      span{
+        color: #e1e1e6;
+
+      }
+    }
+  }  
+
 }

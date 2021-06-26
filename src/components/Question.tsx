@@ -11,6 +11,7 @@ type QuestionProps = {
   children?: ReactNode;  
   isAnswered?: boolean;
   isHighlighted?: boolean;
+  dark?: boolean;
 }
 
 
@@ -19,6 +20,7 @@ const Question = ({
   author,
   isAnswered = false,
   isHighlighted = false,
+  dark = false,
   children,
 }: QuestionProps) => {
   return (
@@ -27,6 +29,7 @@ const Question = ({
         'question', 
         { answered: isAnswered },
         { highlighted: isHighlighted && !isAnswered },
+        { dark: dark },
       )}
     >
       <p>{content}</p>
